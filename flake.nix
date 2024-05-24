@@ -47,6 +47,9 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    treefmt.url = "github:numtide/treefmt/feat/better-concurrency-model";
+    treefmt.inputs.nixpkgs.follows = "nixpkgs";
+
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -71,6 +74,7 @@
               ./terraform/shell.nix
             ];
             treefmt = {
+              package = inputs'.treefmt.packages.treefmt;
               flakeCheck = defaultPlatform;
               imports = [ ./dev/treefmt.nix ];
             };

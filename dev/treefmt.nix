@@ -2,7 +2,7 @@
   # Used to find the project root
   projectRootFile = ".git/config";
 
-  package = pkgs.treefmt2;
+  #package = pkgs.treefmt2;
 
   programs = {
     deadnix.enable = true;
